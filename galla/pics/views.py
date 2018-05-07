@@ -70,3 +70,8 @@ def article(request,article_id):
     except DoesNotExist:
         raise Http404()
     return render(request,"all-pics/article.html", {"article":article})
+
+def article_detail(request,id):
+    # return HttpResponse(slug)
+    articles = Article.objects.filter(id = id).all()
+    return render(request,'articles/article_detail.html',{'article':articles})
