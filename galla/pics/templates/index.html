@@ -1,0 +1,33 @@
+{% extends "all-pinapps/base.html" %}  {% block content %}
+<h1 class="text-center">Wassup Y'All</h1> <br>
+<nav class="navbar navbar-light bg-light">
+ <span class="navbar-text">
+   search for your needs
+ </span>
+</nav>
+
+<div class="container">
+
+ <div class="row">
+   {# displaying Profiles Images #}
+{% for image_item in profiles%}
+   <div class="col-xs-4 col-sm-4 col-md-4 mt-5">
+     <div class="card" style="width: 14rem;">
+     <img class="card-img-top" src="{{pics_item.image.url}}" class="img-responsive" alt="{{pics_item.image_name}}">
+       <div class="card-body">
+
+       <a<button type="button" href="{% url 'image' image_item.id %}" class="btn btn-dark float-right">details &rarr;</button></a>
+       </div>
+     </div>
+
+   </div>
+   {% empty %}
+   <div class="row">
+     <h2 class="text-center">No Images</h2>
+   </div>
+   {% endfor%}
+ </div>
+
+</div>
+
+{% endblock %}

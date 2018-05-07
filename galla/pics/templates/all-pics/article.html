@@ -4,9 +4,6 @@
 
 <div class="container">
 
-    <div class="row">
-      <img src="{{article.article_image.url}}" class="img-responsive" alt="">
-    </div>
 
     <div class="row">
       <h1 class="text-center">{{article.title}}</h1>
@@ -17,7 +14,26 @@
     </div>
 
     <div class="row">
+      <div class="jinx">
+      <p>Location:{{article.location}}</p>
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="jinx">
+      <p>Category:{{article.category}}</p>
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="jinx">
+      <img src="{{article.article_image.url}}" class="img-responsive" alt="">
+    </div>
+    </div>
+    <div class="row">
+      <div class="jinx">
       <p>Posted {{article.pub_date|timesince}}</p>
+    </div>
     </div>
 
 </div>

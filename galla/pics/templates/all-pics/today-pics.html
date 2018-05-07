@@ -20,12 +20,13 @@
 
   <div class="row">
     <!-- displaying pics articles -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
+      <div class="col-xs-12 col-lg-12 col-md-12 col-lg-8">
 
       <!--Display pics Article images  -->
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <a href="{% url 'article' article_id=pics_item.id %}"><img src="{{pics_item.article_image.url}}" class="img-responsive" alt="Image"></a>
+  <div class="col-xs-6 col-sm-6 col-md-12 col-lg-6">
+    <a href="{% url 'article' article_id=pics_item.id %}"><img src="{{pics_item.article_image.url}}" class="img-responsive " alt="Image"></a>
   </div>
 
     </div>
