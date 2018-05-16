@@ -1,13 +1,13 @@
 h1
 {
-  color: blue;
+  color: black;
 }
 nav{
   font-family: 'Pangolin', cursive;
 }
 body{
   font-family: 'Pangolin', cursive;
-  background-color: black;
+  background-color: white;
 }
 .pop{
   color: white;
@@ -18,3 +18,17 @@ body{
 .article{
   color: white;
 }
+.jinx{
+  font-size: 30px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width:768px @screen-sm-min) {  }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:992px @screen-md-min) { }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width:1200px @screen-lg-min) { }
+
+/* landscape phones and smaller */

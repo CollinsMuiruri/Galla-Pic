@@ -3,12 +3,12 @@
 {% block content %}
 
 
-{% for article in article %}
+{% for articles in article %}
 <div class="article-detail">
   <div class="article">
-    <h2>{{article.title}}</h2>
+    <h2>{{articles.title}}</h2>
     <p>{{article.post}}</p>
-    <p>{{article.article_image.url}}</p>
+    <img src="{{article.article_image.url}}" class="img-responsive " alt="Image" style="width:50%">
 
 
   </div>

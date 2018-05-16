@@ -1,41 +1,46 @@
 {% extends 'all-pics/base.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-container {
+  background-color: white;
+}
+p {
+  text-align: left;
+}
 
-<div class="container">
+</style>
+<body>
+
+  {% for articles_item in articles %}
+
+<div class="w3-container">
+  <div class="w3-row">
+    <div class="w3-col-md-2 col-lg-2 col-xs-1 col-sm-1"></div>
+    <div class="w3-col-md-8 col-lg-8 col-xs-9 col-sm-9">
+      <div class="w3-col-md-8 col-lg-8 col-xs-9 col-sm-9">
 
 
-    <div class="row">
-      <h1 class="text-center">{{article.title}}</h1>
-    </div>
+  <h2>{{articles_item.title}}</h2>
 
-    <div class="row">
-      <p>{{article.post}}</p>
+  <div class="w3-card-4" style="width:50%">
+  <a href="{% url 'detail' id=articles_item.id %}"><img src="{{articles_item.article_image.url}}" alt="Norway" style="width:100%"></a>
+    <div class="w3-container w3-center">
+      <p>{{articles_item.post}}</p>
+      <p>Location:{{articles_item.location}}</p>
+      <p>Category:{{articles_item.category}}</p>
+      <p>Posted on {{articles_item.pub_date|timesince}}</p>
     </div>
-
-    <div class="row">
-      <div class="jinx">
-      <p>Location:{{article.location}}</p>
-    </div>
-    </div>
-
-    <div class="row">
-      <div class="jinx">
-      <p>Category:{{article.category}}</p>
-    </div>
-    </div>
-
-    <div class="row">
-      <div class="jinx">
-      <img src="{{article.article_image.url}}" class="img-responsive" alt="">
-    </div>
-    </div>
-    <div class="row">
-      <div class="jinx">
-      <p>Posted {{article.pub_date|timesince}}</p>
-    </div>
-    </div>
-
+  </div>
 </div>
-
+</div>
+</div>
+</div>
+{% empty %}
+<div class="row">
+  <h2 class="text-center">Oops! Sorry...No gAllA - pIcS here</h2>
+</div>
+{% endfor %}
+</body>
 {% endblock %}

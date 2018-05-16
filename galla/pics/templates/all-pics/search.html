@@ -1,6 +1,14 @@
 {%extends 'all-pics/base.html'%}
+{% load bootstrap3 %}
 {% load static %}
 {% block content %}
+
+<style>
+body {
+  background-color: white;
+}
+
+</style>
 <body>
 
 <div class="container">
@@ -8,11 +16,19 @@
 <div class="pop">
 
   <div class="row">
-    {% if categories%}
-      <h2>Found {{ categories|length }} of searched term {{message}}</h2>
-    {% else %}
-      <h2> Found 0 articles for the search term {{message}}</h2>
-    {% endif %}
+
+    <!-- <form method="get">
+      {{ filter.form.as_p }}
+      <button type="submit">Search</button>
+    </form> -->
+    <ul>
+    {% for article in filter.qs %}
+      <li>{{ article.title }}</li>
+      <a href="{% url 'detail' id=article.id %}"><img src="{{article.article_image.url}}" alt="Norway" style="width:100%"></a>
+    {% endfor %}
+    </ul>
+
+
 
   </div>
 
@@ -21,11 +37,16 @@
 
   <div class="row">
 
-  {% if categories %}
-    {% for category in categories %}
+  {% if articles %}
+    {% for article in articles %}
       <div class="col-sm-6 col-md-3">
           <h1>{{article.title}}</h1>
       </div>
+
+      <div class="col-sm-6 col-md-3">
+        <a href="{% url 'detail' id=article.id %}"><img src="{{article.article_image.url}}" alt="Norway" style="width:100%"></a>
+      </div>
+
     {% endfor %}
   {% endif %}
   </div>
